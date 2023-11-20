@@ -30,6 +30,7 @@ The Testing Go for Statistics assignment was one of the first programs that I ha
 [GitHub Copilot](https://github.com/features/copilot)  
 [Introduction to GitHub Copilot](https://learn.microsoft.com/en-us/training/modules/introduction-to-github-copilot/)  
 [Why GitHub Copilot Chat Is Better For Developers Than ChatGPT](https://medium.com/dare-to-be-better/why-github-copilot-chat-is-better-for-developers-than-chatgpt-0cd2930e3290)
+[GitHub CoPilot: The Missed Chance?](https://medium.com/gitconnected/github-copilot-the-missed-chance-d7b46da35a89)
 
 ### AI-Generated Code
 I used the free version of ChatGPT to generate a version of the code for week 2's assignment. I approached this by trying to see if ChatGPT could really generate correct code from scratch, giving just the basic prompt to start with. 
@@ -46,12 +47,10 @@ Next, I prompted ChatGPT to create use the Go testing package to test and benchm
 
 Please see [this link](https://chat.openai.com/share/6a127960-2671-4eb0-baeb-76be2e5191b0) or gpt/script.txt for the complete conversation with the LLM agent.
 
-Overall, it took some work to get ChatGPT to produce the expected results. It is important to keep in mind that ChatGPT was last updated in January 2022, so updates to packages that we use after that time may be the cause for some issues. That should not have been the case here since the LinearRegression function in the stats package was last updated 5 years ago. None-the-less, we still needed to provide a copy of the function so that ChatGPT could see what was expected. I intentionally started out somewhat vague to test what ChatGPT can do. Providing more guidance and background on the codebase we used may have led to 
+Overall, it took some work to get ChatGPT to produce the expected results. It is important to keep in mind that ChatGPT was last updated in [January 2022](https://chat.openai.com/share/d8a23d64-cf18-4244-bb76-b7037a6da37c), so updates to packages that we use after that time may be the cause for some issues. That should not have been the case here since the LinearRegression function in the stats package was last updated 5 years ago. None-the-less, we still needed to provide a copy of the function so that ChatGPT could see what was expected. I intentionally started out somewhat vague to test what ChatGPT can do. Providing more guidance and background on the codebase we used may have led to 
 
 #### References
 [32 ChatGPT Tips for Beginners in 2023!](https://www.youtube.com/watch?v=dUjWMdR_Kw8)
 
 ## Conculsion
-Although there are definite benefits to using automated programming, it ...
-
-It is important to note that GitHub Copilot and ChatGPT may also be trained on "bad code." Professional developers will still be required on staff to guide the models and decide which suggestions to accept and which to discard.
+It is important to note that GitHub Copilot, ChatGPT and other AI-assisted programming options may also be trained on "bad code." Professional developers will still be required on staff to guide the models and decide which suggestions to accept and which to discard. I would not suggest that the startup start cutting personnel costs by laying off senior developers with the thought that AI-assisted programming can take over. We do recommend that developers start integrating these tools into their workflows as it has proven to increase productivity. Developers using these tools can focus more energy on problem solving and collaboration and spend less effort on the mundane and boilerplate. The startup should also take into consideration the cost of using these tools. GitHub Copilot requires a subscription to use and while ChatGPT does have a free version, we would recommend using the ChatGPT Plus version as it provides access to an improved model and provides additional customization.
