@@ -32,11 +32,21 @@ The Testing Go for Statistics assignment was one of the first programs that I ha
 [Why GitHub Copilot Chat Is Better For Developers Than ChatGPT](https://medium.com/dare-to-be-better/why-github-copilot-chat-is-better-for-developers-than-chatgpt-0cd2930e3290)
 
 ### AI-Generated Code
-I used the free version of ChatGPT to generate a version of the code week 2's assignment. Some issues that I ran into was that ChatGPT did not seem to know some of the syntax for the Go stat's package that we were using. This could be due to updates to the package that was made after ChatGPT was last trained. The results of the initial code that was created was also creating incorrect results. Continuing conversation with GPT to see if we can achieve better results. Below is my initial prompt:
+I used the free version of ChatGPT to generate a version of the code for week 2's assignment. I approached this by trying to see if ChatGPT could really generate correct code from scratch, giving just the basic prompt to start with. 
+
+Initial prompt:
 
 > Help me write a program in Go using github.com/montanaflynn/stats package to estimate linear regression coefficients for the Anscombe quartet data. We are looking to replicate the following Python code in Go: [copy of Python starter code]
 
-Please see gpt/script.txt for the complete conversation with the LLM agent.
+The first generated code did not work, however, provided a good starting point for building the code. The first issue that we ran into was that ChatGPT did not know the expected input type for the LinearRegression package. It attempted to send 2 slices with the X and Y coordinates, rather than the a 'stats.Series' type. In response, I provided ChatGPT with the error, as well as the telling ChatGPT what the expected input type for stats.LinearRegression should be based on the documentation. I continued with this approach of providing the errors until we reached a version of the code that compiled and ran (5 prompts). 
+
+The first working code did not produce results that matched the output of Python and R. It took many more prompts to reach a version of the code that returned the correct results. I had to eventually provide a copy of the stats.LinearRegression function from the documentation to show ChatGPT that the function did not return the coeffients. I first tried to example that using my own words but ChatGPT did not understand until I provided an actual copy of the code.
+
+Next, I prompted ChatGPT to create use the Go testing package to test and benchmark the code. The first response only creating test functions that needed some modifications. I do note that the tests that were produced were more thorough than what I wrote myself for the week 2 assignment.
+
+Please see [this link](https://chat.openai.com/share/6a127960-2671-4eb0-baeb-76be2e5191b0) or gpt/script.txt for the complete conversation with the LLM agent.
+
+Overall, it took some work to get ChatGPT to produce the expected results. It is important to keep in mind that ChatGPT was last updated in January 2022, so updates to packages that we use after that time may be the cause for some issues. That should not have been the case here since the LinearRegression function in the stats package was last updated 5 years ago. None-the-less, we still needed to provide a copy of the function so that ChatGPT could see what was expected. I intentionally started out somewhat vague to test what ChatGPT can do. Providing more guidance and background on the codebase we used may have led to 
 
 #### References
 [32 ChatGPT Tips for Beginners in 2023!](https://www.youtube.com/watch?v=dUjWMdR_Kw8)

@@ -44,8 +44,31 @@ func createSeries(x, y []float64) stats.Series {
 }
 
 func printRegressionSummary(setName string, model stats.Series) {
-	intercept := model[0].Y
-	slope := model[1].Y
+	if len(model) < 2 {
+		fmt.Printf("Not enough data points for regression on %s\n", setName)
+		return
+	}
+
+	// Find the first pair of non-equal coordinates
+	var firstCoord, lastCoord stats.Coordinate
+	for i := 0; i < len(model)-1; i++ {
+		if model[i] != model[i+1] {
+			firstCoord = model[i]
+			lastCoord = model[i+1]
+			break
+		}
+	}
+
+	// Checking if all coordinates are equal
+	if firstCoord == lastCoord {
+		fmt.Printf("All coordinates are equal for regression on %s. Unable to calculate slope and intercept.\n", setName)
+		return
+	}
+
+	// Calculating the slope and intercept from the coordinates
+	slope := (lastCoord.Y - firstCoord.Y) / (lastCoord.X - firstCoord.X)
+	intercept := firstCoord.Y - slope*firstCoord.X
+
 	fmt.Printf("%s Regression:\n", setName)
 	fmt.Printf("Intercept: %.4f\n", intercept)
 	fmt.Printf("Slope: %.4f\n", slope)
